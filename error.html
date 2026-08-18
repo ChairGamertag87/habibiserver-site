@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habibi Server - CRASH</title>
+    <style>
+        /* =========================================
+           🎨 PALETTE DU DUMMY (Mêmes couleurs)
+           + Ajout d'un Rouge pour l'erreur
+           ========================================= */
+        :root {
+            --skin-base: #dccfa3;
+            --skin-shadow: #bca87b;
+            --skin-dark: #6e5c46;
+            --error-red: #a83232; /* Un rouge "brique" qui va bien avec le beige */
+
+            --bg-color: #f0eadd;
+            --card-bg: #eaddcf;
+            --text-color: #4a3b2a;
+        }
+
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--skin-base);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: radial-gradient(var(--skin-shadow) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            border: 4px solid var(--error-red); /* Bordure ROUGE pour l'erreur */
+            background-color: var(--bg-color);
+            box-shadow: 10px 10px 0px var(--skin-shadow);
+            position: relative;
+        }
+
+        /* HEADER & VISAGE CASSÉ */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px dashed var(--error-red);
+            padding-bottom: 2rem;
+        }
+
+        .dummy-face {
+            width: 60px;
+            height: 60px;
+            background-color: var(--skin-base);
+            border: 4px solid var(--skin-dark);
+            margin: 0 auto 1rem auto;
+            position: relative;
+            box-shadow: inset -4px -4px 0px var(--skin-shadow);
+
+            /* C'est ici qu'on le met K.O. */
+
+        }
+
+        /* Les yeux en croix (X) pour dire qu'il est mort */
+        .dummy-face::before, .dummy-face::after {
+            content: 'x';
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--skin-dark);
+            position: absolute;
+            top: 10px;
+        }
+        .dummy-face::before { left: 10px; }
+        .dummy-face::after { right: 10px; }
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--error-red); /* Titre en rouge */
+        }
+
+        .tagline {
+            background-color: var(--error-red);
+            color: var(--bg-color);
+            padding: 5px 10px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* CONTENU MODIFIÉ (Ton screen) */
+        .content-grid { display: grid; gap: 2rem; }
+
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 0.5rem;
+            color: var(--error-red);
+        }
+
+        p { line-height: 1.6; margin-bottom: 1rem; }
+
+        .status-box {
+            background-color: var(--card-bg);
+            border: 2px solid var(--error-red); /* Bordure rouge */
+            padding: 1.5rem;
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="dummy-face"></div>
+        <h1>OOF! CRASH.</h1>
+        <span class="tagline">ERROR_DETECTED // SYSTEM_HALTED</span>
+    </header>
+
+    <div class="content-grid">
+
+        <div>
+            <div class="section-title">> WHAT_HAPPENED?</div>
+            <p>
+                <strong>Aïe.</strong> Le mannequin de test s'est pris un insecte.
+            </p>
+            <p>
+                La page que vous cherchez n'existe pas, ou le serveur est en train de paniquer dans un coin, tout seul sans adulte responsable.
+                Comme c'est une instance de test, ce genre de chose arrive quand on expérimente un peu trop fort, ou juste quand on est nul.
+            </p>
+            <p>
+                Revenez en arrière avant de tout faire planter.
+            </p>
+        </div>
+
+        <div class="status-box">
+            <div class="section-title">> DIAGNOSTIC</div>
+            <ul>
+                <li><strong>Status :</strong> <span style="color: var(--error-red); font-weight: bold;">CRITICAL FAILURE</span></li>
+                <li><strong>Action :</strong> Vérifier l'URL, CloudFlare, AWS ou contacter l'admin</li>
+                <li><strong>Probabilité que ce soit ma faute :</strong> Beaucoup</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+   <p> [ SYSTEM REBOOTING... ] -- Habibi Server © 2025</p>
+    root/ChairGamertag87
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habibi Server - Dummy Environment</title>
+  <link rel="icon" href="face.png" type="image/x-icon">
+  <style>
+    /* =========================================
+       🎨 PALETTE MANNEQUIN / DUMMY
+       Couleurs extraites de ton skin Minecraft
+       ========================================= */
+    :root {
+      /* Le beige clair de la peau du mannequin */
+      --skin-base: #dccfa3;
+      /* Le beige plus foncé pour les ombres */
+      --skin-shadow: #bca87b;
+      /* Le marron foncé des contours et des yeux */
+      --skin-dark: #6e5c46;
+
+      /* Couleurs de fond et texte */
+      --bg-color: #f0eadd; /* Un blanc cassé très doux */
+      --card-bg: #eaddcf;  /* Couleur bois clair */
+      --text-color: #4a3b2a;
+    }
+
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--skin-base);
+      color: var(--text-color);
+      font-family: 'Courier New', Courier, monospace; /* Police "Brute" pour le côté test */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: radial-gradient(var(--skin-shadow) 1px, transparent 1px);
+      background-size: 20px 20px; /* Petit effet de grille subtil */
+    }
+
+    /* CONTAINER PRINCIPAL */
+    .container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      border: 4px solid var(--skin-dark);
+      background-color: var(--bg-color);
+      box-shadow: 10px 10px 0px var(--skin-shadow); /* Ombre "bloc" style Minecraft */
+      position: relative;
+    }
+
+    /* HEADER & FACE PIXEL ART CSS */
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-bottom: 2px dashed var(--skin-dark);
+      padding-bottom: 2rem;
+    }
+
+    /* Création du visage du dummy en pur CSS */
+    .dummy-face {
+      width: 60px;
+      height: 60px;
+      background-color: var(--skin-base);
+      border: 4px solid var(--skin-dark);
+      margin: 0 auto 1rem auto;
+      position: relative;
+      box-shadow: inset -4px -4px 0px var(--skin-shadow);
+    }
+    /* Les yeux */
+    .dummy-face::before, .dummy-face::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 8px;
+      height: 8px;
+      background-color: var(--skin-dark);
+    }
+    .dummy-face::before { left: 12px; }
+    .dummy-face::after { right: 12px; }
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      background-color: var(--skin-dark);
+      color: var(--skin-base);
+      padding: 5px 10px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    /* SECTION CONTENU */
+    .content-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 0.5rem;
+      color: var(--skin-dark);
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* BOITE DE STATUT (Le côté serveur) */
+    .status-box {
+      background-color: var(--card-bg);
+      border: 2px solid var(--skin-dark);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    li { margin-bottom: 0.5rem; }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* CLIGNOTEMENT DU CURSEUR */
+    .blink { animation: blinker 1s linear infinite; }
+    @keyframes blinker { 50% { opacity: 0; } }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="dummy-face"></div>
+    <h1>Habibi Server</h1>
+    <span class="tagline">TEST_DUMMY_ENVIRONMENT // V.1.0</span>
+  </header>
+
+  <div class="content-grid">
+
+    <div>
+      <div class="section-title">> WHAT_IS_THIS?</div>
+      <p>
+        Bienvenue sur <strong>Habibi Server</strong>. Ce serveur est une instance de test brute un peu comme un bac à sable numérique.
+        Comme un mannequin d'entraînement, ce serveur est là pour encaisser les programmes foireux,
+        recevoir des configurations expérimentales et parfois... tout faire planter.
+      </p>
+      <p>
+        Pas de design superflu ici. Juste du code, des logs, du Linux et du café pour certains.
+      </p>
+    </div>
+
+    <div class="status-box">
+      <div class="section-title">> SYSTEM_SPECS</div>
+      <ul>
+        <li><strong>OS :</strong> Ubuntu Linux</li>
+        <li><strong>Web Engine :</strong> Nginx</li>
+        <li><strong>Mission :</strong> Sandbox & Prototypage</li>
+        <li><strong>Status :</strong> <span style="color: green;">ONLINE</span> <span class="blink">_</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>[ SYSTEM READY ] -- Habibi Server © 2025 </p>
+  root/ChairGamertag87
+</footer>
+
+</body>
+</html>
