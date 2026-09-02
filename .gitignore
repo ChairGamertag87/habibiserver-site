@@ -1,0 +1,4 @@
+# Propre au serveur (non versionne)
+.auto-update.lock
+auto-update.log
+docker-compose.override.yml
